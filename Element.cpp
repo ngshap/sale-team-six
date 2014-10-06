@@ -1,19 +1,22 @@
 using namespace std;
 
+template <class elementType>
 class Element {
-	Object object;
+	elementType object;
 	public:
 		Object getElement();
-		void setElement(Object newObject);
+		void setElement(elementType newObject);
 }
 
-Object Element::getElement() {
+template <class elementType>
+elementType Element::getElement() {
 
 	return object;
 
 }
 
-void Element::setElement(Object newObject) {
+template <class elementType>
+elementType Element::setElement(elementType newObject) {
 
 	this.object = newObject;
 
