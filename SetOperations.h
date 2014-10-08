@@ -1,5 +1,5 @@
-#ifndef __SALE__Set<E>Operations__
-#define __SALE__Set<E>Operations__
+#ifndef __SALE__SetOperations__
+#define __SALE__SetOperations__
 
 template <class E>
 class SetOperations {
