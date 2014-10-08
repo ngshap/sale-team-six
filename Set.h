@@ -1,10 +1,4 @@
-//
-//  Set.h
-//  SALE
-//
-//  Created by Voltage on 10/7/14.
-//  Copyright (c) 2014 Gabriel Revells. All rights reserved.
-//
+
 
 #ifndef __SALE__Set__
 #define __SALE__Set__
