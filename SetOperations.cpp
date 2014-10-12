@@ -15,3 +15,98 @@ Set<E> SetOperations::complement(Set<E> universe, Set<E> subset) {
 	return SetOperations::difference(universe, subset);
 
 }
+
+/* contributors: Nat, Joseph Pietrzyk
+ * union takes two ordered sets and returns the set of the union of two sets
+ * it is O(m+n)
+ */
+template <class E>
+Set<E> SetOperations::union (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
+{
+	Set<E> final; /* fixed by Joseph Pietrzyk */ 
+
+	int m = a.getSize(), b = b.getSize();
+	int i = 0, j = 0;
+
+	while (i < m && j < n)
+	{
+    if (a.getElements(i) < b.getElements(j))
+    	final.addElement(a.getElements(i++));
+    else if (b.getElements(j) < a.getElements(i))
+    	final.addElement(b.getElements(j++));
+    else
+		{
+		  final.addElement(b.getElements(j++));
+		  i++;
+		}
+	}
+	while(i < m)
+		final.addElement(a.getElements(i++));
+	while(j < n)
+		final.addElement(b.getElements(j++));
+
+	return final;
+}
+
+/* contributors: Nat, Joseph Pietrzyk
+ * intersection takes two ordered sets and returns the set of the intersection of two sets
+ * it is O(m+n)
+ */
+template <class E>
+Set<E> SetOperations::intersection (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
+{
+	Set<E> final; /* fixed by Joseph Pietrzyk */
+
+	int m = a.getSize(), b = b.getSize();
+	int i = 0, j = 0;
+
+	while (i < m && j < n)
+	{
+		if (a.getElements(i) < b.getElements(j))
+			i++;
+		else if (b.getElements(j) < a.getElements(i))
+			j++;
+		else // if a.getElements(i) == b.getElements(j) 
+		{
+			final.addElement(b.getElements(j++));
+			i++;
+		}
+	}
+
+	return final;
+}
+
+/* contributors: Nat, Joseph Pietrzyk
+ * difference takes two ordered sets and returns the set of the element-wise difference of two sets
+ */
+template <class E>
+Set<E> SetOperations::diference (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
+{
+	Set<E> final; /* fixed by Joseph Pietrzyk */
+    if (len(a) > len(b))
+    {
+        int i = len(b);
+        while (i < len(a))
+            final.addElement(a.getElements(i++));
+    }
+    else if (len(a) > len(b))
+    {
+        int i = len(a);
+        while (i < len(b))
+            final.addElement(b.getElements(i++));
+    }
+
+	return final;
+}
+
+/* contributors: Nat, Joseph Pietrzyk
+ * product takes two ordered sets and returns the set of the cartesian product of two sets */
+template <class E>
+Set<E> SetOperations::product (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
+{
+	Set<E> final;
+    for (i = 0; i <= len(a); i++)  //NB i<=n because there will be n+1 points along each axis-parallel line
+        for (j = 0 ;j <= len(b); j++)
+                addPoint(i/len(a),j/len(b))  //float arithmetic required here
+
+	return final;
