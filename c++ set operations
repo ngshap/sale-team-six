@@ -1,11 +1,17 @@
+#include "Set.h" /* fixed by Joseph Pietrzyk */
+#include "SetOperations.h" /* fixed by Joseph Pietrzyk */
+
+
 /*functions or the set operations class*/
 
-/* contributors: Nat
+/* contributors: Nat, Joseph Pietrzyk
  * union takes two ordered sets and returns the set of the union of two sets
- * it is O(m+n) */
-Set union (Set a, Set b)
+ * it is O(m+n)
+ */
+template <class E>
+Set SetOperations::union (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
 {
-	Set final;
+	Set<E> final; /* fixed by Joseph Pietrzyk */ 
 
 	int m = a.getSize(), b = b.getSize();
 	int i = 0, j = 0;
@@ -30,12 +36,14 @@ Set union (Set a, Set b)
 	return final;
 }
 
-/* contributors: Nat
+/* contributors: Nat, Joseph Pietrzyk
  * intersection takes two ordered sets and returns the set of the intersection of two sets
- * it is O(m+n) */
-Set intersection (Set a, Set b)
+ * it is O(m+n)
+ */
+template <class E>
+Set<E> SetOperations::intersection (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
 {
-	Set final;
+	Set<E> final; /* fixed by Joseph Pietrzyk */
 
 	int m = a.getSize(), b = b.getSize();
 	int i = 0, j = 0;
@@ -56,11 +64,13 @@ Set intersection (Set a, Set b)
 	return final;
 }
 
-/* contributors: Nat
- * difference takes two ordered sets and returns the set of the element-wise difference of two sets */
-Set diference (Set a, Set b)
+/* contributors: Nat, Joseph Pietrzyk
+ * difference takes two ordered sets and returns the set of the element-wise difference of two sets
+ */
+template <class E>
+Set SetOperations::diference (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
 {
-	Set final;
+	Set<E> final; /* fixed by Joseph Pietrzyk */
     if (len(a) > len(b))
     {
         int i = len(b);
@@ -77,11 +87,12 @@ Set diference (Set a, Set b)
 	return final;
 }
 
-/* contributors: Nat
+/* contributors: Nat, Joseph Pietrzyk
  * product takes two ordered sets and returns the set of the cartesian product of two sets */
-Set product (Set a, Set b)
+template <class E>
+Set SetOperations::product (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
 {
-	Set final;
+	Set<E> final;
     for (i = 0; i <= len(a); i++)  //NB i<=n because there will be n+1 points along each axis-parallel line
         for (j = 0 ;j <= len(b); j++)
                 addPoint(i/len(a),j/len(b))  //float arithmetic required here
