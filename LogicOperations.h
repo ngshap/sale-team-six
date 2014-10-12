@@ -3,6 +3,9 @@
  *  A static class used to perform boolean logic
  */
 
+#ifndef LOGIC_OPERATIONS_H
+#define LOGIC_OPERATIONS_H
+
 class LogicOperations {
 public:
 	static bool logicalAnd(bool operand1, bool operand2);
@@ -14,3 +17,4 @@ public:
 	static bool logicalIf(bool operand1, bool operand2);
 	static bool logicalIff(bool operand1, bool operand2);
 };
+#endif
