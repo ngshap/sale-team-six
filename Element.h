@@ -6,7 +6,7 @@ class Element {
 	private:
 		elementType object;
 	public:
-		Object getElement();
+		elementType getElement(); /* fixed by Joseph Pietrzyk */
 		void setElement(elementType newObject);
 };
 
