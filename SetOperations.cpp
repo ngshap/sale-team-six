@@ -57,7 +57,7 @@ Set<E> SetOperations::intersection (Set<E> a, Set<E> b) /* fixed by Joseph Pietr
 {
 	Set<E> final; /* fixed by Joseph Pietrzyk */
 
-	int m = a.getSize(), b = b.getSize();
+	int m = sizeof(a.getElements()), b = sizeof(b.getelements());
 	int i = 0, j = 0;
 
 	while (i < m && j < n)
@@ -83,16 +83,16 @@ template <class E>
 Set<E> SetOperations::diference (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
 {
 	Set<E> final; /* fixed by Joseph Pietrzyk */
-    if (len(a) > len(b))
+    if (sizeof(a) > sizeof(b))
     {
-        int i = len(b);
-        while (i < len(a))
+        int i = sizeof(b);
+        while (i < sizeof(a))
             final.addElement(a.getElements(i++));
     }
-    else if (len(a) > len(b))
+    else if (sizeof(a) > sizeof(b))
     {
-        int i = len(a);
-        while (i < len(b))
+        int i = sizeof(a);
+        while (i < sizeof(b))
             final.addElement(b.getElements(i++));
     }
 
@@ -105,8 +105,8 @@ template <class E>
 Set<E> SetOperations::product (Set<E> a, Set<E> b) /* fixed by Joseph Pietrzyk */
 {
 	Set<E> final;
-    for (i = 0; i <= len(a); i++)  //NB i<=n because there will be n+1 points along each axis-parallel line
-        for (j = 0 ;j <= len(b); j++)
-                addPoint(i/len(a),j/len(b))  //float arithmetic required here
+    for (i = 0; i <= sizeof(a); i++)  //NB i<=n because there will be n+1 points along each axis-parallel line
+        for (j = 0 ;j <= sizeof(b); j++)
+                addPoint(i/sizeof(a),j/sizeof(b))  //float arithmetic required here
 
 	return final;
