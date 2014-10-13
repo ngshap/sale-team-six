@@ -10,5 +10,5 @@ LIBRARY_NAME = saleTeamSixLib.a
 $(LIBRARY_NAME): $(LIBRARY_OBJ)
 	ar rcs $@ $(LIBRARY_OBJ)
 
-$.o: %.cpp
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
